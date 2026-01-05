@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leila Graham | Creative Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1 style="color: white; font-size: 40px; text-align: center; margin-top: 40px;">
+    Hello, your site is live.
+  </h1>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div class="logo">Leila Graham</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h1>Multimedia Designer &amp; Video Editor</h1>
+      <p>Creating bold visuals, clean edits, and engaging stories for brands and events.</p>
+      <a href="#projects" class="btn-primary">View Work</a>
+    </section>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>Short bio about who you are, what you specialise in, and where you’re based.</p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Project Title 1</h3>
+          <p>Short description of a film, campaign, or edit you worked on.</p>
+        </article>
+        <article class="card">
+          <h3>Project Title 2</h3>
+          <p>Short description with what you did (shooting, editing, colour, sound).</p>
+        </article>
+        <article class="card">
+          <h3>Project Title 3</h3>
+          <p>Another piece of work or student film you’re proud of.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Leila Graham. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
