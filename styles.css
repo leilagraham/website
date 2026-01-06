@@ -32,22 +32,30 @@ body {
 
 /* Header / Nav */
 .site-header {
-  padding: 1.5rem clamp(1rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--border);
+  padding: 0;
+  border-bottom: none;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  position: relative;
+  z-index: 100;
+}
+
+.nav:hover {
+  background: rgba(0, 0, 0, 1);
 }
 
 .logo {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--text);
+  display: none;
 }
 
 .nav-links {
@@ -55,6 +63,8 @@ body {
   gap: 2rem;
   list-style: none;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links > li {
@@ -62,7 +72,7 @@ body {
 }
 
 .nav-links a {
-  color: var(--text);
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 400;
@@ -70,7 +80,7 @@ body {
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* Dropdown submenus */
@@ -82,8 +92,8 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.95);
+  border: none;
   list-style: none;
   padding: 0.5rem 0;
   margin-top: 0.5rem;
@@ -92,8 +102,9 @@ body {
   visibility: hidden;
   transform: translateY(-10px);
   transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 1000;
+  border-radius: 4px;
 }
 
 .has-submenu:hover .submenu {
@@ -110,12 +121,12 @@ body {
   display: block;
   padding: 0.6rem 1.25rem;
   font-size: 0.9rem;
-  color: var(--text);
+  color: #ffffff;
   transition: background 0.2s ease;
 }
 
 .submenu a:hover {
-  background: var(--hover);
+  background: rgba(255, 255, 255, 0.1);
   opacity: 1;
 }
 
@@ -123,8 +134,23 @@ body {
 .hero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem clamp(1rem, 4vw, 3rem) 3rem;
+  padding: 2rem clamp(1rem, 4vw, 3rem) 3rem;
   text-align: center;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  margin: 0 auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 1rem;
+  border-radius: 4px;
 }
 
 .hero h1 {
@@ -139,6 +165,22 @@ body {
   margin: 0 auto 2rem;
   color: var(--text-muted);
   font-size: 1.1rem;
+}
+
+/* Consultation Section */
+.consultation-section {
+  text-align: center;
+  padding: 2rem clamp(1rem, 4vw, 3rem);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.consultation-section p {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0;
+  font-weight: 400;
 }
 
 .btn-primary {
@@ -249,14 +291,21 @@ main {
 @media (max-width: 767px) {
   .nav {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
   }
 
   .nav-links {
     flex-wrap: wrap;
-    gap: 1.25rem;
+    gap: 1rem;
+    justify-content: center;
     width: 100%;
+  }
+  
+  .hero-image-placeholder {
+    height: 250px;
   }
 
   .hero {
