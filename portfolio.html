@@ -88,8 +88,25 @@
   </footer>
 
   <script>
+    // Prevent browser scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Scroll to top on page load if no hash anchor
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+    
+    // Also scroll to top immediately when page loads
+    window.addEventListener('load', function() {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    });
   </script>
 </body>
 </html>
